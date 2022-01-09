@@ -509,6 +509,7 @@ public class ScheduleMain implements ActionListener {
 			JOptionPane.showMessageDialog(frame, "선택한 행이 삭제 되었습니다.");
 			scheduleOfDay.remove(row);
 			model.removeRow(row);	
+			
 		}	
 		
 	}
