@@ -2,7 +2,7 @@
 ## 개인 프로젝트 
 
 ### 목차
-​	[1. Calculator](#Calculator)
+​	[1. Calculator](#1. Calculator)
 ​	[2. Scheduler](#Scheduler)
 
 ------
