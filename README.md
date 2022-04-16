@@ -1,13 +1,27 @@
-# Projects_Me
 ## 개인 프로젝트 
 
 ### 목차
-​	[1. Calculator](#1_Calculator)
-​	[2. Scheduler](#Scheduler)
+​	[1. Tetris](#Tetris)
+
+​	[2. YS_Calculator](#Calculator)
+
+​	[3. YS_Project01_SQL](#Scheduler)
 
 ------
 
-## 1_Calculator
+### Tetris
+
+
+------
+
+### Calculator
+
+
+-----
+
+### Scheduler
+
+
 
 #### 프로젝트 명
 
