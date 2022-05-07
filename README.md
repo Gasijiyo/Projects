@@ -21,7 +21,7 @@
 
 ### YSBlog [소스 코드](https://github.com/Gasijiyo/Projects/tree/master/YSBlog)
 
-#### React, Node.js 사용해 개인 블로그 구현
+#### React, Node.js, MongoDB 사용해 개인 블로그 구현
 
 [목차로 이동](#목차)
 
