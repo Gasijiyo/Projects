@@ -42,24 +42,23 @@ router.put("/:id", async (req, res) => {
 
 //Delete Post
 router.delete("/:id", async (req, res) => {
-    //post를 찾고 post의 username이 지금의 username과 일치하는지 비교
-    try {
-      const post = await Post.findById(req.params.id);
-      if (post.username === req.body.username) {
-        try {
-          await post.delete();
-          res.status(200).json("The post has been deleted");
-        } catch (error) {
-          res.status(500).json(err);
-        }
-      } else {
-        res.status(401).json("You can only delete your post");
+  //post를 찾고 post의 username이 지금의 username과 일치하는지 비교
+  try {
+    const post = await Post.findById(req.params.id);
+    if (post.username === req.body.username) {
+      try {
+        await post.delete();
+        res.status(200).json("The post has been deleted");
+      } catch (error) {
+        res.status(500).json(err);
       }
-    } catch (error) {
-      res.status(500).json(err);
+    } else {
+      res.status(401).json("You can only delete your post");
     }
-  });
-
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
 
 //Get Post
 router.get("/:id", async (req, res) => {
@@ -73,18 +72,26 @@ router.get("/:id", async (req, res) => {
 
 // Get All Posts
 router.get("/", async (req, res) => {
-    const username = req.query.user;
-    const catName = req.query.cat;
-    try {
-      let posts;
-      if(username){
-          posts = await Post.find({username})   //{username:usename}와 같음
-      } else if(catName){
-          posts = await Post.find({categories})
-      }
-    } catch (err) {
-      res.status(500).json(err);
+  const username = req.query.user;
+  const catName = req.query.cat;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username }); //{username:usename}와 같음
+      // 주소뒤에 쿼리문 생성 (/?user=유저이름)
+    } else if (catName) {
+      posts = await Post.find({
+        categories: {
+          $in: [catName], //[]는 카테고리이름을 가리킴. 카테코리가 만약 카테고리이름을 포함할 경우
+        },
+      });
+    } else {
+      posts = await Post.find();
     }
-  });
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
