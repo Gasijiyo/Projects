@@ -64,12 +64,27 @@ router.delete("/:id", async (req, res) => {
 //Get Post
 router.get("/:id", async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    const { password, ...others } = user._doc;
-    res.status(200).json(others);
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// Get All Posts
+router.get("/", async (req, res) => {
+    const username = req.query.user;
+    const catName = req.query.cat;
+    try {
+      let posts;
+      if(username){
+          posts = await Post.find({username})   //{username:usename}와 같음
+      } else if(catName){
+          posts = await Post.find({categories})
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 module.exports = router;
