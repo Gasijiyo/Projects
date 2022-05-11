@@ -1,5 +1,6 @@
 import "./settings.css"
 import Sidebar from "../../components/sidebar/Sidebar"
+
 export default function Settings() {
   return (
     <div className="settings">
@@ -15,15 +16,17 @@ export default function Settings() {
                   <label htmlFor="fileInput">
                     <i className="settingsPPIcon fa-solid fa-circle-user"></i>
                   </label>
-                  <input type="file" id="fileInput" style={{display:"none"}}/>
+                  <input type="file" id="fileInput" style={{display:"none"}} className="settingsPPInput"/>
                 </div>
                 <label>UserName</label>
                 <input type="text" placeholder="YangSu"/>
                 <label>Email</label>
                 <input type="email" placeholder="pys9307@naver.com"/>
                 <label>Password</label>
-                <input type="password" />
-                <button className="settingsSubmit">Update</button>
+                <input type="password" placeholder="Password" name="password"/>
+                <button className="settingsSubmitButton" type="submit">
+                    Update
+                </button>
             </form>
         </div>
         <Sidebar/>

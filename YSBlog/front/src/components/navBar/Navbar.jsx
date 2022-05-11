@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
     // true 면 logout 보임, false면 안보임
-    const user = false;
+    const user = true;
   return (
     <div className="top">
         <div className="topLeft">
@@ -33,9 +33,10 @@ export default function Navbar() {
             </ul>
         </div>
         <div className="topRight">
-            {
-                user ? (
+            {user ? (
+                <Link className="link" to="/settings">
                     <img className="topImg" src="1.jpg" alt="" />
+                </Link>                    
                 ) : (
                     <ul className="topList">
                         <li className="topListItem">

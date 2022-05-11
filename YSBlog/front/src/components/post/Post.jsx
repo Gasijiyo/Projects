@@ -1,10 +1,10 @@
 import "./post.css"
 
-export default function Post() {
+export default function Post({img}) {
   return (
     <div className="post">
         <img className="postImg" 
-        src="345.jpg" alt="" />
+        src={img} alt="" />
         <div className="postInfo">
             <div className="postCats">
                 <span className="postCat">Music</span>

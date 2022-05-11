@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./singlepost.css"
 
 export default function SinglePost() {
@@ -14,7 +15,12 @@ export default function SinglePost() {
             </h1>
             <div className="singlePostInfo">
                 <span className="singlePostAuthor">
-                    Author: <b>Yang Su</b>
+                    Author: 
+                    <b>
+                        <Link className="link" to="/posts?username=YangSu">
+                            YangSu
+                        </Link>
+                    </b>
                 </span>                
                 <span className="singlePostDate">1 hour ago</span>
             </div>
@@ -27,6 +33,7 @@ export default function SinglePost() {
                 I'm not half the man I used to be
                 There's a shadow hanging over me
                 Oh, yesterday came suddenly
+                <br/>
                 Why she had to go, I don't know
                 She wouldn't say
                 I said something wrong
