@@ -1,13 +1,23 @@
 ## 개인 프로젝트 
 
 ### 목차
-​	[1. Tetris](#Tetris)
+​	[1. Shooting](#Shooting)
 
-​	[2. YSBlog](#YSBlog)
+​	[2. Tetris](#Tetris)
 
-​	[3. YS_Calculator](#Calculator)
+​	[3. YSBlog](#YSBlog)
 
-​	[4. YS_Project01_SQL](#Scheduler)
+​	[4. YS_Calculator](#Calculator)
+
+​	[5. YS_Project01_SQL](#Scheduler)
+
+------
+
+### Shooting [소스 코드](https://github.com/Gasijiyo/Projects/tree/master/Shooting)
+
+#### JavaScript로 슈팅 게임 구현
+
+[목차로 이동](#목차)
 
 ------
 
